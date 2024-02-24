@@ -40,6 +40,12 @@ public class UserService implements UserServiceInterface {
     }
 
     @Override
+    public List<Advert> getFavAdverts(int id){
+        User user = user_repo.findById(id).orElse(null);
+        return advert_repo.findAllById(user.getFav_adverts_ids());
+    }
+
+    @Override
     public List<User> getBySurname(String surname) {
         return null;
     }
