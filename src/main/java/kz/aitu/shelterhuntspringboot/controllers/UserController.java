@@ -1,13 +1,11 @@
 package kz.aitu.shelterhuntspringboot.controllers;
 
+import kz.aitu.shelterhuntspringboot.models.Advert;
 import kz.aitu.shelterhuntspringboot.models.User;
 import kz.aitu.shelterhuntspringboot.services.interfaces.UserServiceInterface;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +31,19 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @GetMapping("/{user_id}/owned_adverts")
+    public List<Advert> getOwnedAdverts(@PathVariable("user_id") int id){
+        return service.getOwnedAdverts(id);
+    }
+
+    @PostMapping("/")
+    public ResponseEntity<User> create(@RequestBody User user){
+        User createdUser = service.createUser(user);
+        if(createdUser == null)
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED); //201
     }
 }

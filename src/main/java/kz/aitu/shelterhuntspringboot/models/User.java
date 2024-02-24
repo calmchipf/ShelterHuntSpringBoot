@@ -2,8 +2,12 @@ package kz.aitu.shelterhuntspringboot.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Type;
 
+import java.sql.Array;
 import java.sql.Date;
+import java.util.Arrays;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,13 +23,16 @@ public class User {
     private boolean gender;
     private Date date_of_birth;
     private long phone_number;
+    private List<Integer> owned_adverts_ids;
+    private List<Integer> fav_adverts_ids;
+    private List<Integer> reviews_ids;
+
     private String username;
     private String password;
 
     public boolean getGender() {  // I added this getter because lombok doesn't make one fsr.
         return gender;
     }
-
 
     @Override
     public String toString() {
