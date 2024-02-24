@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "2fb2d907-a34d-4600-a9c8-74309fa8e766",
+		"name": "ShelterHunt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32877703",
+		"_collection_link": "https://restless-flare-167915.postman.co/workspace/test~aeed1677-6c58-41bb-b118-43b226f389ad/collection/32877703-2fb2d907-a34d-4600-a9c8-74309fa8e766?action=share&source=collection_link&creator=32877703"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8090/users/16",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Another\",\r\n    \"surname\": \"Person\",\r\n    \"gender\": false,\r\n    \"date_of_birth\": \"2000-01-01\",\r\n    \"username\": \"ttesterov\",\r\n    \"password\": \"ttesterov\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8090/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOwnedAdverts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
