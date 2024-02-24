@@ -38,6 +38,9 @@ public class UserController {
         return service.getOwnedAdverts(id);
     }
 
+    @GetMapping("/{user_id}/fav_adverts")
+    public List<Advert> getFavAdverts(@PathVariable("user_id") int id) { return service.getFavAdverts(id); }
+
     @PostMapping("/")
     public ResponseEntity<User> create(@RequestBody User user){
         User createdUser = service.createUser(user);
