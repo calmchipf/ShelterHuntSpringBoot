@@ -12,4 +12,7 @@ public interface UserServiceInterface {
     List<User> getBySurname(String surname);
 
     List<Advert> getOwnedAdverts(int id);
+
+    List<Advert> getFavAdverts(int id);
+
 }
