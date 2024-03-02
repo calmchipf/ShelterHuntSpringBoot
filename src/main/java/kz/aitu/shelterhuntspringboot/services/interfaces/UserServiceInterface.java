@@ -14,5 +14,4 @@ public interface UserServiceInterface {
     List<Advert> getOwnedAdverts(int id);
 
     List<Advert> getFavAdverts(int id);
-
 }

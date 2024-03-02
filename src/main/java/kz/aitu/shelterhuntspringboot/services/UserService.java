@@ -5,6 +5,7 @@ import kz.aitu.shelterhuntspringboot.models.User;
 import kz.aitu.shelterhuntspringboot.repositories.AdvertRepositoryInterface;
 import kz.aitu.shelterhuntspringboot.repositories.UserRepositoryInterface;
 import kz.aitu.shelterhuntspringboot.services.interfaces.UserServiceInterface;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +14,9 @@ public class UserService implements UserServiceInterface {
     private final UserRepositoryInterface user_repo;
     private final AdvertRepositoryInterface advert_repo;
 
-    public UserService(UserRepositoryInterface user_repo, AdvertRepositoryInterface advertRepo) {
+    public UserService(UserRepositoryInterface user_repo, AdvertRepositoryInterface advert_repo) {
         this.user_repo = user_repo;
-        advert_repo = advertRepo;
+        this.advert_repo = advert_repo;
     }
 
     @Override
@@ -49,4 +50,7 @@ public class UserService implements UserServiceInterface {
     public List<User> getBySurname(String surname) {
         return null;
     }
+
+
+
 }

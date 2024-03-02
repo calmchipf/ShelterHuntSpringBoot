@@ -2,11 +2,8 @@ package kz.aitu.shelterhuntspringboot.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Type;
 
-import java.sql.Array;
 import java.sql.Date;
-import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -44,8 +41,4 @@ public class User {
                 "Phone number: " + phone_number + '\n' +
                 "- Admin stuff -  " + '\n';
     }
-
-
-
-
 }

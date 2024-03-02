@@ -16,13 +16,4 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String content;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    public Review(String content, User user) {
-        this.content = content;
-        this.user = user;
-    }
 }
